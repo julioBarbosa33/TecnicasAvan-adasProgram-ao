@@ -1,0 +1,37 @@
+﻿@model Jogador
+@{
+    ViewData["title"] = "Editar Jogador";
+}
+
+<div class="container bg-black p-5 rounded-5">
+   
+    <div class="m-5 text-center">
+        <h1 class="text-light">Editar Jogadores</h1>
+    </div>
+
+    <form method="post" asp-controller="Jogador" asp-action="Editar">
+        <input type="hidden" asp-for="Id"/>
+        <div class="form-group">
+            <label for="Nome Jogador" class="text-light">Nome Jogador</label>
+            <input type="text" class="form-control" asp-for="NomeJogador" id="Nome Jogador" placeholder="Quem é o jogador">
+            <span class="text-danger" asp-validation-for="NomeJogador"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Time Jogador" class="text-light">Time Jogador</label>
+            <input type="text" class="form-control" asp-for="TimeJogador" id="Time Jogador" placeholder="Qual o time do jogador">
+            <span class="text-danger" asp-validation-for="TimeJogador"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Camisa Jogador" class="text-light">Camisa Jogador</label>
+            <input type="text" class="form-control" asp-for="CamisaJogador" id="Camisa Jogador" placeholder="Qual o número da camisa do jogador">
+            <span class="text-danger" asp-validation-for="CamisaJogador"></span>
+        </div>
+
+        <div class="d-flex gap-5 mt-5">
+            <button type="submit" class="btn btn-success w-50">Enviar</button>
+            <a class="btn btn-primary w-50" asp-controller="Jogador" asp-action="Index">Voltar</a>
+        </div>
+    </form>
+</div>
